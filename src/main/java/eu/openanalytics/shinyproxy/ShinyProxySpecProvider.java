@@ -99,6 +99,8 @@ public class ShinyProxySpecProvider implements IProxySpecProvider {
 		cSpec.setCpuRequest(from.getContainerCpuRequest());
 		cSpec.setCpuLimit(from.getContainerCpuLimit());
 		cSpec.setPrivileged(from.isContainerPrivileged());
+		cSpec.setProxyManaged(from.isContainerProxyManaged());
+		cSpec.setAppUrl(from.getContainerAppUrl());
 		
 		Map<String, Integer> portMapping = new HashMap<>();
 		if (from.getPort() > 0) {
@@ -136,6 +138,9 @@ public class ShinyProxySpecProvider implements IProxySpecProvider {
 		
 		private int port;
 		private String[] accessGroups;
+
+		private boolean containerProxyManaged = true;
+		private String containerAppUrl;
 
 		public String getId() {
 			return id;
@@ -287,6 +292,22 @@ public class ShinyProxySpecProvider implements IProxySpecProvider {
 
 		public void setAccessGroups(String[] accessGroups) {
 			this.accessGroups = accessGroups;
+		}
+
+		public boolean isContainerProxyManaged() {
+			return containerProxyManaged;
+		}
+
+		public void setContainerProxyManaged(boolean containerProxyManaged) {
+			this.containerProxyManaged = containerProxyManaged;
+		}
+
+		public String getContainerAppUrl() {
+			return containerAppUrl;
+		}
+
+		public void setContainerAppUrl(String containerAppUrl) {
+			this.containerAppUrl = containerAppUrl;
 		}
 	}
 }
