@@ -10,11 +10,15 @@
 
 </pre>
 
+[![Build Status](https://travis-ci.org/openanalytics/shinyproxy.svg?branch=master)](https://travis-ci.org/openanalytics/shinyproxy)
+
 # ShinyProxy
 
 Open Source Enterprise Deployment for Shiny Apps
+
 Learn more at https://shinyproxy.io
 
+#### (c) Copyright Open Analytics NV, 2016-2020 - Apache License 2.0
 This repositoriy has been forked to make it compatible with Saagie Apps (Shiny applications are arleady deployed on Saagie and do not need to be spinned up by ShinyProxy)
 
 ## Building from source

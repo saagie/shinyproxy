@@ -1,7 +1,7 @@
 /**
  * ShinyProxy
  *
- * Copyright (C) 2016-2019 Open Analytics
+ * Copyright (C) 2016-2020 Open Analytics
  *
  * ===========================================================================
  *
@@ -61,7 +61,7 @@ public abstract class BaseController {
 	Environment environment;
 	
 	private static Logger logger = LogManager.getLogger(BaseController.class);
-	private static Pattern appPattern = Pattern.compile(".*/app[^/]*/([^/]*)/?.*");
+	private static Pattern appPattern = Pattern.compile(".*?/app[^/]*/([^/]*)/?.*");
 	private static Map<String, String> imageCache = new HashMap<>();
 	
 	protected String getUserName(HttpServletRequest request) {
@@ -108,9 +108,9 @@ public abstract class BaseController {
 		map.put("logo", resolveImageURI(environment.getProperty("proxy.logo-url")));
 		map.put("showNavbar", !Boolean.valueOf(environment.getProperty("proxy.hide-navbar")));
 		
-		map.put("bootstrapCss", "/webjars/bootstrap/3.3.7/css/bootstrap.min.css");
-		map.put("bootstrapJs", "/webjars/bootstrap/3.3.7/js/bootstrap.min.js");
-		map.put("jqueryJs", "/webjars/jquery/3.3.1/jquery.min.js");
+		map.put("bootstrapCss", "/webjars/bootstrap/3.4.1/css/bootstrap.min.css");
+		map.put("bootstrapJs", "/webjars/bootstrap/3.4.1/js/bootstrap.min.js");
+		map.put("jqueryJs", "/webjars/jquery/3.5.0/jquery.min.js");
 		
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		boolean isLoggedIn = authentication != null && !(authentication instanceof AnonymousAuthenticationToken) && authentication.isAuthenticated();
